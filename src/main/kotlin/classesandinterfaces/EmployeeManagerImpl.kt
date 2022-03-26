@@ -13,8 +13,6 @@ class EmployeeManagerImpl : EmployeeManager {
 
     override fun getAllEmployeesDetails() {
         for (e in employeesList) println(e.toString())
-        employeesList
-
     }
 
     override fun getSalarySum() : Double {

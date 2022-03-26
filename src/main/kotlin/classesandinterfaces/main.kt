@@ -29,9 +29,9 @@ fun main() {
     box1.resetAllData()
     println(box1)
 
-    val vehicle : List<Vehicle> = listOf(MotorBike("SuperMotorBike", 150), Car("Megacar", 200))
+    val vehicle: List<Vehicle> = listOf(MotorBike("SuperMotorBike", 150), Car("Megacar", 200))
 
-    fun(vehicle : Vehicle){
+    fun(vehicle: Vehicle) {
         vehicle.run()
     }
 
@@ -61,25 +61,21 @@ fun main() {
 
     // player1.name = "Jerzy" nie mogę, bo dałem VAL (!)
 
+// w kotlinie klasy defaultowo są final, a gdy chcemy inaczej, trzeba użyć open
+    open class A constructor(a: Int, b: String?) {
+        public fun f() {}
+    }
 
-    /*Zadanie 4
-*  Napisz klasę Employee. Klasa powinna zawierać jeden konstruktor z następującymi atrybutami:
-* id (typu Long), address, salary, position - dobierz odpowiednie typy. Wszystkie atrybuty oprócz position są obowiązkowe.
-* Position może przyjmować tylko jedną z trzech wartości: Manager, Developer, Tester. Jeśli nie zostanie
-* podana wartość position podczas instancjonowania obiektu, wówczas zostaje ustawiona wartość domyślna - Developer.
-* Następnie dodaj interfejs EmployeeManager z metodami:
-* - do dodawania pracownika
-* - taką która wypisuje wszystkie informacje (id, address, salary, position) wszystkich aktualnie dodanych pracowników
-* - taką, która zwraca sumę wynagrodzeń wszystkich pracowników
-* Dodaj klasę EmployeeManagerImpl, która implementuje ten interfejs.
-* Obiekty klasy Employee powinny być przechowywane w liście, która jest składową klasy EmployeeManagerImpl.
-* Wykonaj odpowiednie testy.
-* Do rozwiązania zadania, nie jest wymagane użycie lambd.
-*
-* Zadanie 4* (dla osób które zrobiły zasadniczą część)
-* Użyj lambd podczas implementacji funkcji interfejsu EmployeeManager.
-* */
+    class B(a: Int, b: String?, c: String?) : A(a, b)
 
+    //modyfikatory dostępu
+    open class C {
+        val name = "test"
+        private val number = 1
+        internal open val x =
+            'a' //składowa x jest dostępna tylko w ramach tego samego modułu (moduł = zbiór skompilowanych źródeł)
 
+        protected open fun f() {}
+    }
 
 }
